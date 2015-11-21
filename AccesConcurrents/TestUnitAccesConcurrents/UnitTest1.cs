@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data.Entity;
 using AccesConcurrents;
+using System.Linq;
 
 namespace TestUnitAccesConcurrents
 {
@@ -43,7 +44,7 @@ namespace TestUnitAccesConcurrents
         public void verifyDatabaseIsNotEmpty()
         {
             CompanyContext companyCtx = new CompanyContext();
-            int count = Convert.ToInt32(companyCtx.Customers.CountAsync());
+            int count = companyCtx.Customers.Count();
             Assert.IsTrue(count > 0);
         }
     }
