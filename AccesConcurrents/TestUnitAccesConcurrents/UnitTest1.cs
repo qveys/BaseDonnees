@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data.Entity;
 using AccesConcurrents;
 using System.Linq;
+using System.Data.Entity.Infrastructure;
 
 namespace TestUnitAccesConcurrents
 {
@@ -10,7 +11,7 @@ namespace TestUnitAccesConcurrents
     public class UnitTest1
     {
         [TestMethod]
-        public void TestAddDatabase()
+        public void InsertionFonctionnelle()
         {
 
             Database.SetInitializer(new DropCreateDatabaseAlways<CompanyContext>());
@@ -47,5 +48,23 @@ namespace TestUnitAccesConcurrents
             int count = companyCtx.Customers.Count();
             Assert.IsTrue(count > 0);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(DbUpdateConcurrencyException))]
+        public void DetecteLesEditionsConcurrentes()
+        {
+            var contexteDeJohn = new CompanyContext();
+            var clientDeJohn = contexteDeJohn.Customers.First();
+
+            var contexteDeSarah = new CompanyContext();
+            var clientDeSarah = contexteDeSarah.Customers.First();
+
+            clientDeJohn.AccountBalance += 11;
+            contexteDeJohn.SaveChanges();
+
+            clientDeSarah.AccountBalance += 100;
+            contexteDeSarah.SaveChanges();
+        }
+    
     }
 }

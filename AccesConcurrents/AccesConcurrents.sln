@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesConcurrents", "AccesCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitAccesConcurrents", "TestUnitAccesConcurrents\TestUnitAccesConcurrents.csproj", "{E0C25FCC-BADA-4833-9F72-488FE6358BDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFClient", "..\..\..\..\Downloads\WPFClient\WPFClient\WPFClient.csproj", "{8A3822D2-71BB-488C-BBFA-C9C75E77F668}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E0C25FCC-BADA-4833-9F72-488FE6358BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0C25FCC-BADA-4833-9F72-488FE6358BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0C25FCC-BADA-4833-9F72-488FE6358BDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3822D2-71BB-488C-BBFA-C9C75E77F668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3822D2-71BB-488C-BBFA-C9C75E77F668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3822D2-71BB-488C-BBFA-C9C75E77F668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3822D2-71BB-488C-BBFA-C9C75E77F668}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
